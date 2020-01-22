@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+        main
+        {
+            display: flex;
+            height: 100vh;
+        }
+        .body
+        {
+            font-family: sans-serif;
+        }
+        .left
+        {
+            background-color: dodgerblue;
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .right
+        {
+            background-color: tomato;
+            flex: 3;
+        }
+        @media (max-width: 600px)
+        {
+            main
+            {
+                flex-direction: column-reverse;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <main>
+            <div class = "left">
+                Left
+            </div>
+            <div class = "right">
+                Right
+            </div>
+        </main>
+    </body>
+</html>
