@@ -1,0 +1,94 @@
+A<html>
+    <head>
+        <link rel='stylesheet' href="style.css" />
+        <style>
+            body
+            {
+                font-family: verdana;
+                margin: 0;
+            }
+            nav
+            {
+                padding: 1rem;
+                color: white;
+                background-color: dodgerblue;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
+            nav a
+            {
+                color: white;
+                text-decoration: none;
+            }
+            nav a:first-child
+            {
+                font-size: 1.5rem;
+            }
+            a.selected
+            {
+                font-weight: bold;
+            }
+            main
+            {
+                margin: 1rem;
+            }
+            form
+            {
+                border: solid 1px black;
+                padding: 1rem;
+                margin: 20%;
+            }
+            input
+            {
+                height: 3rem;
+            }
+            .form-group
+            {
+                margin: 1rem;
+                display: flex;
+                align-items: center;
+            }
+            .form-group label
+            {
+                flex: 1;
+            }
+            .form-group input,select
+            {
+                flex: 3;
+            }
+            input,select,button
+            {
+                height: 3rem;
+            }
+            .button-group
+            {
+                display: flex;
+                justify-content: center;
+            }
+            button.primary
+            {
+                background-color: dodgerblue;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="#">Acme Layout</a>
+            <a href="#" class="selected">Users</a>
+            <a href="#">Departments</a>
+            <a href="#">Contact</a>
+        </nav>
+        <main>
+            <h1>Users</h1>
+            <form>
+                <h2>Create A User</h2>
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input placeholder="Enter First Name"/>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

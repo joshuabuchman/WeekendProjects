@@ -7,6 +7,8 @@
                 font-family: verdana;
                 margin: 0;
             }
+            main {
+            }
             nav
             {
                 padding: 1rem;
@@ -29,6 +31,38 @@
             {
                 font-weight: bold;
             }
+
+            h2 {
+                color: grey;
+                padding: 1rem;
+                margin: 0rem;
+            }
+
+            main div {
+            }
+
+
+            .boxes {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .create-user {
+                width: 50%;
+                height: 200px;
+                border: solid 1px black;
+                border-radius: 0.5rem;
+                padding: 0;
+            }
+            .smallBoxes
+            {
+                width: 100px;
+                height: 200px;
+                border: solid 1px black;
+                border-radius: 0.5rem;
+                padding: 0;
+            }
         </style>
     </head>
     <body>
@@ -39,7 +73,23 @@
             <a href="#">Contact</a>
         </nav>
         <main>
-            
+            <h2>Users</h2>
+            <div class="boxes">
+                <div class="create-user">
+                    <h2>Create A User</h2>
+                </div>
+            </div>
+            <div class="boxes">
+                <div class="smallBoxes">User A</div>
+                <div class="smallBoxes">User A</div>
+                <div class="smallBoxes">User A</div>
+                <div class="smallBoxes">User A</div>
+                <div class="smallBoxes">User A</div>
+                <div class="smallBoxes">User A</div>
+                <div class="smallBoxes">User A</div>
+                <div class="smallBoxes">User A</div>
+                <div class="smallBoxes">User A</div>
+            </div>
         </main>
     </body>
 </html>
