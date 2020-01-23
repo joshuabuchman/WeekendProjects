@@ -8,9 +8,17 @@ const employees = [
     { id: 8, name: 'shep Jr.', managerId: 4},
     { id: 99, name: 'lucy', managerId: 1}
   ];
- 
 
-
+  const spacer = (text) => 
+  {
+    if(!text)
+    {
+      return console.log('');
+    }
+    const stars = new Array(5).fill('*').join('');
+    console.log(`${stars} ${text} ${stars}`);
+  }
+  
   const findEmployeeByName = (name, emps) =>
   {
       return emps.find(function(elem)
@@ -59,40 +67,33 @@ const employees = [
   
   const generateManagementTree = (emps) =>
   {
-    let copiedEmps = emps.map(function(elem) 
+    let topMan = emps.find(elem => 
     {
-      let obj = Object.assign({}, elem);
-      obj.reports = [];
-      return obj;
+      return !elem.managerId;
     })
-    let tree = copiedEmps.filter(function(elem)
+    for(let i=0; i<emps.length; i++)
     {
-      let currMan;
-      if(!elem.managerId)
+      emps[i].reports = [];
+      for(let j=i+1; j<emps.length; j++)
       {
-        currMan = elem;
-        copiedEmps.pop(elem);
-        elem.reports.push(generateManagementTree(copiedEmps));
-        return elem;
-      }
-      else
-      {
-        if(elem.managerId===currMan.id)
+        if(emps[j].managerId===emps[i].id)
         {
-          currMan = elem;
-          copiedEmps.pop(elem);
-          elem.reports.push(generateManagementTree(copiedEmps));
-          return elem;
+          emps[i].reports = [...emps[i].reports,emps[j]];
         }
       }
-    })
-    return tree;
+    }
+    return topMan;
   }
   
-  const displayManagementTree = () =>
+  const displayManagementTree = (tree) =>
+{
+  console.log(tree.name);
+  for(let i=0;i<tree.reports.length;i++)
   {
-  
-  }
+    console.log("-".repeat(i));
+    displayManagementTree(tree.reports[i]);  
+  } 
+}
   
 spacer('findEmployeeByName Moe')
 // given a name and array of employees, return employee
