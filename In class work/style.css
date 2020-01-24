@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+  }
+  body {
+    font-family: verdana;
+  }
+  
+  #employees {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+  }
+  
+  #employees li {
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    border: solid 1px black;
+    width: calc(100% / 3 - 2rem);
+    display: flex;
+    justify-content: center;
+    background-color: aqua;
+  }
