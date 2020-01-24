@@ -10,6 +10,20 @@
 const isMatch = (obj1, obj2) =>
 {
     const entries2 = Object.entries(obj2);
+    /* or...
+    
+    entries.forEach(entry)=>
+    {
+        const [key,value] = entries2[i];
+        let match = true;
+        if(obj1[key]!=value)
+        {
+            return false;
+            break;
+        }
+        return match;
+    }
+    */
     for(let i=0; i<entries2.length; i++)
     {
         const [key,value] = entries2[i];
