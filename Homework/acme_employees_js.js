@@ -29,6 +29,9 @@ const employees = [
           }
       })
   }
+  //[pk] ok this workds but the callback you pass to "find" should return a boolean!
+  //[pk] yours luckily works because objects (like "elem") are truthy
+  //[pk] but just passing the boolean would be much less verbose -- see solution!
   
   const findManagerFor = (emp, emps) =>
   {
@@ -40,6 +43,7 @@ const employees = [
           }
       })
   }
+  //[pk] same
   
   const findCoworkersFor = (emp, emps) =>
   {
@@ -52,6 +56,8 @@ const employees = [
       })
       return foundCos;
   }
+  //[pk] good! same issue as above tho
+  
   
   const findManagementChainForEmployee = (emp, emps) =>
   {
@@ -64,6 +70,8 @@ const employees = [
     }
     return manChain.reverse();
   }
+  
+  //[pk] noice!
   
   const generateManagementTree = (emps) =>
   {
@@ -84,6 +92,7 @@ const employees = [
     }
     return topMan;
   }
+  //[pk] this does work although it depends on mutating the input. see the solution for a recursive, non-mutating approach
   
   const displayManagementTree = (tree) =>
 {
@@ -94,6 +103,8 @@ const employees = [
     displayManagementTree(tree.reports[i]);  
   } 
 }
+  
+  //[pk] hmm not quite the expected output! see solution.
   
 spacer('findEmployeeByName Moe')
 // given a name and array of employees, return employee
